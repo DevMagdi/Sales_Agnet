@@ -16,6 +16,7 @@ verbatim (trimmed only where noted).
 | Readiness | `python scripts/doctor.py` | runs, exit 0, prints adapters + deliverability + live blockers |
 | Dashboard API contract | `node scripts/verify_dashboard.mjs` | **58 checks, 0 failures**, `DASHBOARD CONTRACT OK` |
 | Dashboard build | `cd frontend && npm run typecheck && npm run lint && npm run build` | 10 routes prerendered, no type or lint errors |
+| CI (GitHub Actions) | `.github/workflows/ci.yml` on this branch | backend (ruff, mypy, pytest + coverage gate, migrations) **pass**, e2e + doctor **pass**, dashboard build **pass** |
 
 ### Test breakdown
 
@@ -83,6 +84,11 @@ Nine routes (`/`, `/login`, `/campaigns`, `/review`, `/replies`, `/tasks`, `/sup
 `/system`) talking to 40+ endpoints, all reached through the Next.js rewrite proxy exactly as the
 browser does. `scripts/verify_dashboard.mjs` also asserts that credentials are never echoed back
 (`mailbox secret is masked`) and that a duplicate mailbox returns **409**, not 500.
+
+Two CI-only failures found and fixed while wiring that workflow — both real packaging bugs that a
+developer machine hides: `sqlalchemy` was imported without its `[asyncio]` extra (no `greenlet`, so the
+async engine failed to import on a clean install), and `tests/conftest.py` helpers were unresolvable
+when `pytest` runs as a bare entry point instead of `python -m pytest`.
 
 ## Wired, not witnessed (needs real infrastructure)
 
