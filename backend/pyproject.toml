@@ -61,6 +61,9 @@ asyncio_mode = "auto"
 testpaths = ["tests"]
 filterwarnings = ["ignore::DeprecationWarning"]
 addopts = "-q"
+# The tests import `tests.conftest` helpers, so the project root must be importable even when
+# pytest is invoked as a bare entry point (CI) rather than `python -m pytest`.
+pythonpath = ["."]
 
 [tool.coverage.run]
 source = ["app"]
