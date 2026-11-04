@@ -1,0 +1,133 @@
+# English seed templates v1.
+templates:
+  - code: initial
+    locale: en
+    channel: email
+    step: initial
+    subject: "Handling RFQs for {category} at {company_name}"
+    body_text: |
+      {greeting},
+
+      {opening_observation}
+
+      At Mantiq Technologies we built ProcureAI to speed up the RFQ cycle:
+      • {fact_intake}
+      • {fact_comparison}
+      • {fact_control}
+
+      {poc_offer_text}
+
+      More details: {features_url}
+      WhatsApp us: {whatsapp_link}
+
+      If this isn't relevant, reply "STOP" and we won't contact you again — or click: {unsubscribe_url}
+
+      {sender_name}
+      {sender_title}, Mantiq Technologies
+      {company_address} | {company_phone}
+
+  - code: followup_1
+    locale: en
+    channel: email
+    step: followup_1
+    subject: "Re: Handling RFQs for {category} at {company_name}"
+    body_text: |
+      {greeting},
+
+      Following up on my previous note. I can set up a short demo on {category} showing how offers from several suppliers are compared on total landed cost instead of unit price alone.
+
+      {poc_offer_text}
+
+      If someone else owns procurement, I'd appreciate an introduction.
+      If this isn't relevant, reply "STOP" or click: {unsubscribe_url}
+
+      {sender_name} — Mantiq Technologies
+
+  - code: followup_2
+    locale: en
+    channel: email
+    step: followup_2
+    subject: "Re: Handling RFQs for {category} at {company_name}"
+    body_text: |
+      {greeting},
+
+      One last idea: we can run the demo on your own most recent RFQ, or on a sample list such as {example_items}.
+
+      {poc_offer_text}
+
+      This is my last message unless you tell me otherwise.
+      If this isn't relevant, reply "STOP" or click: {unsubscribe_url}
+
+      {sender_name} — Mantiq Technologies
+
+  - code: breakup
+    locale: en
+    channel: email
+    step: breakup
+    subject: "Closing the loop — {company_name}"
+    body_text: |
+      {greeting},
+
+      I won't follow up again and will close this from my side. If procurement help becomes useful later, just reply.
+      To stop all email: {unsubscribe_url}
+
+      {sender_name} — Mantiq Technologies
+
+  - code: reply_info
+    locale: en
+    channel: email
+    step: reply_info
+    subject: "Re: {original_subject}"
+    body_text: |
+      {greeting},
+
+      Thanks for your interest. In short, ProcureAI:
+      • {fact_intake}
+      • {fact_comparison}
+      • {fact_control}
+
+      Full details: {features_url}
+
+      {sender_name} — Mantiq Technologies
+
+  - code: reply_booking
+    locale: en
+    channel: email
+    step: reply_booking
+    subject: "Re: {original_subject}"
+    body_text: |
+      {greeting},
+
+      Happy to. You can pick a slot here: {booking_url}
+      Or reply with times that suit you.
+
+      {sender_name} — Mantiq Technologies
+
+  - code: reply_unsubscribe
+    locale: en
+    channel: email
+    step: reply_unsubscribe
+    subject: "Re: {original_subject}"
+    body_text: |
+      You've been removed; we won't contact you again.
+
+      {sender_name} — Mantiq Technologies
+      {company_address} | {company_phone}
+
+  - code: reply_referral_thanks
+    locale: en
+    channel: email
+    step: reply_referral_thanks
+    subject: "Re: {original_subject}"
+    body_text: |
+      Thank you for pointing me to {referred_name}; I'll reach out.
+
+      {sender_name} — Mantiq Technologies
+
+  - code: demo_followup
+    locale: en
+    channel: whatsapp
+    step: demo_followup
+    subject: ""
+    body_text: |
+      Hello {contact_name}, about {category} — would a {demo_duration}-minute walkthrough help? {booking_url}

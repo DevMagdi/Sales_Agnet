@@ -1,0 +1,20 @@
+# Egyptian official holidays. Public-sector dates; private factories mostly follow these.
+# Update yearly. The scheduler skips any date listed here.
+country: EG
+holidays:
+  - {date: 2026-01-07, name_en: Coptic Christmas, name_ar: عيد الميلاد المجيد}
+  - {date: 2026-01-25, name_en: Revolution Day, name_ar: عيد الثورة}
+  - {date: 2026-03-19, name_en: Eid al-Fitr (day 1), name_ar: عيد الفطر}
+  - {date: 2026-03-20, name_en: Eid al-Fitr (day 2), name_ar: عيد الفطر}
+  - {date: 2026-03-21, name_en: Eid al-Fitr (day 3), name_ar: عيد الفطر}
+  - {date: 2026-04-13, name_en: Sham El-Nessim, name_ar: شم النسيم}
+  - {date: 2026-04-25, name_en: Sinai Liberation Day, name_ar: عيد تحرير سيناء}
+  - {date: 2026-05-01, name_en: Labour Day, name_ar: عيد العمال}
+  - {date: 2026-05-26, name_en: Eid al-Adha (day 1), name_ar: عيد الأضحى}
+  - {date: 2026-05-27, name_en: Eid al-Adha (day 2), name_ar: عيد الأضحى}
+  - {date: 2026-05-28, name_en: Eid al-Adha (day 3), name_ar: عيد الأضحى}
+  - {date: 2026-06-16, name_en: Islamic New Year, name_ar: رأس السنة الهجرية}
+  - {date: 2026-06-30, name_en: June 30 Revolution, name_ar: ثورة 30 يونيو}
+  - {date: 2026-07-23, name_en: July 23 Revolution, name_ar: ثورة 23 يوليو}
+  - {date: 2026-08-25, name_en: Prophet's Birthday, name_ar: المولد النبوي}
+  - {date: 2026-10-06, name_en: Armed Forces Day, name_ar: عيد القوات المسلحة}

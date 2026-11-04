@@ -1,0 +1,13 @@
+# UAE official holidays (approximate; confirm yearly).
+country: AE
+holidays:
+  - {date: 2026-01-01, name_en: New Year, name_ar: رأس السنة الميلادية}
+  - {date: 2026-03-19, name_en: Eid al-Fitr, name_ar: عيد الفطر}
+  - {date: 2026-03-20, name_en: Eid al-Fitr, name_ar: عيد الفطر}
+  - {date: 2026-03-21, name_en: Eid al-Fitr, name_ar: عيد الفطر}
+  - {date: 2026-05-26, name_en: Arafat Day, name_ar: يوم عرفة}
+  - {date: 2026-05-27, name_en: Eid al-Adha, name_ar: عيد الأضحى}
+  - {date: 2026-05-28, name_en: Eid al-Adha, name_ar: عيد الأضحى}
+  - {date: 2026-06-16, name_en: Islamic New Year, name_ar: رأس السنة الهجرية}
+  - {date: 2026-12-02, name_en: UAE National Day, name_ar: اليوم الوطني}
+  - {date: 2026-12-03, name_en: UAE National Day, name_ar: اليوم الوطني}
