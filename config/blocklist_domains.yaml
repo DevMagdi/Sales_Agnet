@@ -1,0 +1,64 @@
+# Domains that must never be contacted, regardless of campaign or admin intent.
+competitors:
+  # procurement / sourcing / e-procurement software vendors
+  - coupa.com
+  - sap.com
+  - ariba.com
+  - jaggaer.com
+  - zycus.com
+  - geps.com
+  - ivalua.com
+  - fairmarkit.com
+  - procureport.com
+  - tealbook.com
+  - prewave.com
+  - verdict.co
+  # local procurement-tech players
+  - wantshop.com
+  - maxab.io
+  - ofoq.com
+government:
+  - gov.eg
+  - egypt.gov.eg
+  - mol.gov.eg
+  - gafta.gov.eg
+  - customs.gov.eg
+  - eta.gov.eg
+  - treasury.gov
+  - ec.europa.eu
+  - un.org
+  - worldbank.org
+free_mail:
+  - gmail.com
+  - googlemail.com
+  - yahoo.com
+  - yahoo.co.uk
+  - hotmail.com
+  - outlook.com
+  - live.com
+  - msn.com
+  - aol.com
+  - icloud.com
+  - me.com
+  - protonmail.com
+  - proton.me
+  - gmx.com
+  - mail.ru
+  - yandex.com
+  - yandex.ru
+disposable:
+  - mailinator.com
+  - guerrillamail.com
+  - 10minutemail.com
+  - tempmail.com
+  - temp-mail.org
+  - throwawaymail.com
+  - sharklasers.com
+  - getnada.com
+  - dispostable.com
+  - yopmail.com
+  - trashmail.com
+  - maildrop.cc
+  - fakeinbox.com
+  - spam4.me
+  - discard.email

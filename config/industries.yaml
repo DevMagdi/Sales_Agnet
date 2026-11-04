@@ -1,0 +1,135 @@
+# Industry playbooks. pain_hypotheses are hedged general observations, never assertions about a
+# specific company. demo_scenario / example_rfq_items drive the personalised demo offer.
+industries:
+  - code: packaging_printing
+    name_en: Packaging & Printing
+    name_ar: التعبئة والتغليف والطباعة
+    purchased_categories: [kraft paper, corrugated board, film, ink, adhesive, carton board]
+    pain_hypotheses:
+      - "Companies in packaging often compare suppliers on unit price only, while freight and waste change the real cost."
+      - "Often several people quote the same item, so price history is scattered across WhatsApp and Excel."
+    demo_scenario: "Run a live RFQ for corrugated board and compare three supplier offers on landed cost."
+    example_rfq_items: ["corrugated sheet 5-ply", "kraft liner 90 gsm", "flexo ink"]
+    typical_zones: ["10th of Ramadan", "6th of October", "Obour", "Badr"]
+    regulated: false
+
+  - code: food_beverage
+    name_en: Food & Beverage
+    name_ar: الأغذية والمشروبات
+    purchased_categories: [sugar, edible oil, flavourings, packaging film, citric acid, preservatives]
+    pain_hypotheses:
+      - "Raw material prices move weekly, so quotes collected over several days are hard to compare fairly."
+      - "Specifications and certificates are usually exchanged by email, which slows each RFQ round."
+    demo_scenario: "Take last month's sugar and citric acid purchases, issue the RFQ and compare offers by landed cost."
+    example_rfq_items: ["refined sugar", "citric acid", "PET preform"]
+    typical_zones: ["10th of Ramadan", "Sadat City", "Alexandria", "Borg El Arab"]
+    regulated: true
+
+  - code: plastics_rubber
+    name_en: Plastics & Rubber
+    name_ar: البلاستيك والمطاط
+    purchased_categories: [PP granules, HDPE, LDPE, masterbatch, moulds, rubber compound]
+    pain_hypotheses:
+      - "Polymer prices are quoted in USD and change daily, so comparing offers needs the FX rate and freight in the same view."
+      - "Many companies re-negotiate with the same two or three suppliers without a written comparison."
+    demo_scenario: "Quote PP granules with three suppliers and compare on landed cost and payment terms."
+    example_rfq_items: ["PP homopolymer granules", "HDPE blow moulding grade", "masterbatch"]
+    typical_zones: ["Borg El Arab", "10th of Ramadan", "6th of October"]
+    regulated: false
+
+  - code: building_materials_steel
+    name_en: Building Materials & Steel
+    name_ar: مواد البناء والحديد والصلب
+    purchased_categories: [steel rebar, cement, aggregates, coatings, insulation, fittings]
+    pain_hypotheses:
+      - "Volumes are large, so small price differences dominate; offers often arrive in inconsistent formats."
+      - "Delivery scheduling with several suppliers is usually coordinated manually."
+    demo_scenario: "Compare rebar offers from three mills on landed cost including transport."
+    example_rfq_items: ["steel rebar 12mm", "OPC cement", "anti-rust coating"]
+    typical_zones: ["Sadat City", "6th of October", "Suez/Sokhna", "Alexandria"]
+    regulated: false
+
+  - code: textiles_garments
+    name_en: Textiles & Garments
+    name_ar: المنسوجات والملابس الجاهزة
+    purchased_categories: [yarn, fabric, dyes, trims, zippers, accessories]
+    pain_hypotheses:
+      - "Fabric quality varies by lot, so offers need the specification and sample status recorded next to the price."
+      - "Seasonal deadlines compress the sourcing cycle into a few weeks."
+    demo_scenario: "Issue an RFQ for cotton yarn and compare four offers with lead times."
+    example_rfq_items: ["cotton yarn 30/1", "reactive dye", "YKK zipper"]
+    typical_zones: ["Borg El Arab", "Alexandria", "10th of Ramadan", "Obour"]
+    regulated: false
+
+  - code: chemicals_paints_detergents
+    name_en: Chemicals, Paints & Detergents
+    name_ar: الكيماويات والدهانات والمنظفات
+    purchased_categories: [solvents, titanium dioxide, resins, caustic soda, LABSA, packaging]
+    pain_hypotheses:
+      - "Many inputs are hazardous or regulated, so supplier documents must be checked per order."
+      - "Price lists from distributors are often PDFs with different units and incoterms."
+    demo_scenario: "Compare LABSA offers across three distributors on landed cost and documentation."
+    example_rfq_items: ["LABSA 96%", "caustic soda flakes", "titanium dioxide"]
+    typical_zones: ["Alexandria", "Borg El Arab", "6th of October", "Sadat City"]
+    regulated: true
+
+  - code: engineering_metal_auto
+    name_en: Engineering, Metal Works & Auto Parts
+    name_ar: الهندسة والتشغيل المعدني وقطع غيار السيارات
+    purchased_categories: [steel sheets, bearings, fasteners, castings, CNC subcontracting, hydraulics]
+    pain_hypotheses:
+      - "Subcontracting quotes depend on drawings and tolerances, so comparing them by price alone is misleading."
+      - "Repeat parts are re-quoted from scratch because the last price is not stored in one place."
+    demo_scenario: "Run an RFQ for machined brackets with three workshops and compare on total cost and lead time."
+    example_rfq_items: ["steel sheet 3mm", "SKF bearing", "CNC machined bracket"]
+    typical_zones: ["10th of Ramadan", "6th of October", "Alexandria", "Obour"]
+    regulated: false
+
+  - code: furniture_wood
+    name_en: Furniture & Wood
+    name_ar: الأثاث والأخشاب
+    purchased_categories: [MDF, plywood, veneer, hardware, fabric, varnish]
+    pain_hypotheses:
+      - "Board grades and thicknesses are quoted inconsistently, which makes price comparison unreliable."
+      - "Delivery delays cascade into assembly schedules."
+    demo_scenario: "Compare MDF supplier offers including transport to the factory."
+    example_rfq_items: ["MDF 18mm", "beech plywood", "soft-close hinge"]
+    typical_zones: ["6th of October", "Obour", "Badr", "Alexandria"]
+    regulated: false
+
+  - code: electrical_cables
+    name_en: Electrical & Cables
+    name_ar: الكهرباء والكابلات
+    purchased_categories: [copper, PVC compound, aluminium, circuit breakers, conduits, cable trays]
+    pain_hypotheses:
+      - "Copper prices follow the exchange rate and the LME daily, so old quotes go stale fast."
+      - "Technical compliance documents arrive separately from the commercial offer."
+    demo_scenario: "Compare copper and PVC compound offers on landed cost with FX considered."
+    example_rfq_items: ["electrolytic copper rod", "PVC compound", "MCB 32A"]
+    typical_zones: ["10th of Ramadan", "Badr", "6th of October", "Alexandria"]
+    regulated: false
+
+  - code: pharma_cosmetics
+    name_en: Pharma & Cosmetics
+    name_ar: الأدوية ومستحضرات التجميل
+    purchased_categories: [APIs, excipients, packaging, blister film, labels, laboratory consumables]
+    pain_hypotheses:
+      - "Supplier qualification and documentation dominate the purchasing cycle."
+      - "Batch traceability requires the purchase record to be exact."
+    demo_scenario: "Show an RFQ for excipients with document checkpoints before award."
+    example_rfq_items: ["microcrystalline cellulose", "blister film", "carton leaflet"]
+    typical_zones: ["6th of October", "Alexandria", "10th of Ramadan", "Sadat City"]
+    regulated: true
+
+
+  - code: gulf_trading_industrial
+    name_en: Gulf Industrial Trading & Contracting
+    name_ar: التجارة الصناعية والمقاولات في الخليج
+    purchased_categories: [steel, cement, MEP materials, safety equipment, fasteners]
+    pain_hypotheses:
+      - "Projects re-quote the same materials every few weeks because price files are not shared."
+      - "Approved vendor lists are long, so comparing a new offer takes a week."
+    demo_scenario: "Compare MEP material offers from three approved vendors on landed cost."
+    example_rfq_items: ["steel pipe", "cable tray", "safety helmet"]
+    typical_zones: ["Riyadh", "Jeddah", "Dammam", "Dubai", "Sharjah", "Abu Dhabi"]
+    regulated: false

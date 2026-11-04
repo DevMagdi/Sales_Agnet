@@ -1,0 +1,31 @@
+# Texts to submit to Meta for WhatsApp template approval (utility / marketing as noted).
+# Each template uses at most 3 variables. Keep wording fixed after approval.
+templates:
+  - code: demo_followup
+    locale: en
+    channel: whatsapp
+    step: demo_followup
+    subject: ""
+    body_text: |
+      Hello {{1}}, following up on ProcureAI. Would a {{2}}-minute demo help your team compare supplier offers on landed cost? {{3}}
+  - code: demo_followup
+    locale: ar
+    channel: whatsapp
+    step: demo_followup
+    subject: ""
+    body_text: |
+      أهلاً {{1}}، بخصوص ProcureAI: تحبوا Demo {{2}} دقيقة لمقارنة عروض الموردين بالتكلفة الكاملة؟ {{3}}
+  - code: info_request
+    locale: en
+    channel: whatsapp
+    step: reply_info
+    subject: ""
+    body_text: |
+      Hi {{1}}, as requested here is the ProcureAI overview: {{2}}. Reply here with any question.
+  - code: info_request
+    locale: ar
+    channel: whatsapp
+    step: reply_info
+    subject: ""
+    body_text: |
+      أهلاً {{1}}، دي نظرة سريعة على ProcureAI: {{2}}. رد هنا بأي سؤال.

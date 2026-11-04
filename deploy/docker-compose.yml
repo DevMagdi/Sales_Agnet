@@ -1,0 +1,92 @@
+# Production-shaped stack: PostgreSQL, Redis, the API, Celery worker + beat, and the dashboard.
+#
+#   cp deploy/.env.example deploy/.env      # fill in the secrets and the sender identity
+#   docker compose -f deploy/docker-compose.yml --env-file deploy/.env up -d --build
+#   docker compose -f deploy/docker-compose.yml exec api python -m app.cli seed --demo
+#
+# The dashboard is the only published surface (port 3000) and proxies /api/v1 to the API,
+# so the API never needs to be exposed to the internet.
+
+name: mantiq-outreach
+
+x-backend: &backend
+  build:
+    context: ..
+    dockerfile: backend/Dockerfile
+  image: mantiq-outreach-backend:latest
+  env_file:
+    - .env
+  environment:
+    DATABASE_URL: ${DATABASE_URL:-postgresql+asyncpg://mantiq:mantiq@postgres:5432/mantiq}
+    REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+  restart: unless-stopped
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-mantiq}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-mantiq}
+      POSTGRES_DB: ${POSTGRES_DB:-mantiq}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-mantiq} -d ${POSTGRES_DB:-mantiq}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redisdata:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  api:
+    <<: *backend
+    command: >
+      sh -c "alembic upgrade head &&
+             uvicorn app.main:app --host 0.0.0.0 --port 8000 --proxy-headers"
+    expose:
+      - "8000"
+    ports:
+      - "${API_PORT:-8000}:8000"
+
+  worker:
+    <<: *backend
+    command: ["celery", "-A", "app.workers.celery_app:celery_app", "worker", "-l", "info", "--concurrency", "2"]
+
+  beat:
+    <<: *backend
+    command: ["celery", "-A", "app.workers.celery_app:celery_app", "beat", "-l", "info"]
+
+  dashboard:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+      args:
+        BACKEND_URL: http://api:8000
+    image: mantiq-outreach-dashboard:latest
+    environment:
+      BACKEND_URL: http://api:8000
+    ports:
+      - "${DASHBOARD_PORT:-3000}:3000"
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  pgdata:
+  redisdata:

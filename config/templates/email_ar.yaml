@@ -1,0 +1,133 @@
+# Arabic (Egyptian business tone) seed templates v1. Editing in the UI creates a new version.
+templates:
+  - code: initial
+    locale: ar
+    channel: email
+    step: initial
+    subject: "عن طلبات الأسعار لـ {category} في {company_name}"
+    body_text: |
+      {greeting}،
+
+      {opening_observation}
+
+      في Mantiq Technologies بنينا منصة اسمها ProcureAI لتسريع دورة طلب الأسعار:
+      • {fact_intake}
+      • {fact_comparison}
+      • {fact_control}
+
+      {poc_offer_text}
+
+      تفاصيل أكتر: {features_url}
+      أو راسلونا على واتساب: {whatsapp_link}
+
+      لو ده مش مناسب، رد بكلمة "إيقاف" ومش هنراسلكم تاني، أو اضغط هنا: {unsubscribe_url}
+
+      {sender_name}
+      {sender_title} — Mantiq Technologies
+      {company_address} | {company_phone}
+
+  - code: followup_1
+    locale: ar
+    channel: email
+    step: followup_1
+    subject: "Re: عن طلبات الأسعار لـ {category} في {company_name}"
+    body_text: |
+      {greeting}،
+
+      بتابع على رسالتي السابقة. ممكن أجهّز لكم Demo قصير على {category} يوضّح ازاي بنقارن عروض عدة موردين بالتكلفة الكاملة بدل السعر فقط.
+
+      {poc_offer_text}
+
+      لو في شخص تاني مسؤول عن المشتريات عندكم، ياريت تعرّفوني بيه.
+      لو مش مناسب، رد بكلمة "إيقاف" أو اضغط: {unsubscribe_url}
+
+      {sender_name} — Mantiq Technologies
+
+  - code: followup_2
+    locale: ar
+    channel: email
+    step: followup_2
+    subject: "Re: عن طلبات الأسعار لـ {category} في {company_name}"
+    body_text: |
+      {greeting}،
+
+      فكرة أخيرة: ممكن نعمل الـ Demo على آخر RFQ عندكم فعليًا، أو على قايمة أصناف زي {example_items}.
+
+      {poc_offer_text}
+
+      ده آخر تواصل مني حتى تبلّغوني بخلاف ذلك.
+      لو مش مناسب، رد بكلمة "إيقاف" أو اضغط: {unsubscribe_url}
+
+      {sender_name} — Mantiq Technologies
+
+  - code: breakup
+    locale: ar
+    channel: email
+    step: breakup
+    subject: "إغلاق الموضوع — {company_name}"
+    body_text: |
+      {greeting}،
+
+      مش هعمل متابعة تانية، وهقفل الموضوع من ناحيتي. لو احتجتم حاجة في طلبات الأسعار، ابعتوا رسالة في أي وقت.
+      لإيقاف الرسائل نهائيًا: {unsubscribe_url}
+
+      {sender_name} — Mantiq Technologies
+
+  - code: reply_info
+    locale: ar
+    channel: email
+    step: reply_info
+    subject: "Re: {original_subject}"
+    body_text: |
+      {greeting}،
+
+      شكرًا على اهتمامكم. باختصار، ProcureAI:
+      • {fact_intake}
+      • {fact_comparison}
+      • {fact_control}
+
+      التفاصيل الكاملة: {features_url}
+
+      {sender_name} — Mantiq Technologies
+
+  - code: reply_booking
+    locale: ar
+    channel: email
+    step: reply_booking
+    subject: "Re: {original_subject}"
+    body_text: |
+      {greeting}،
+
+      تمام، نحدد ميعاد. تحجزوا من هنا: {booking_url}
+      أو ردّوا عليّا بالأوقات المناسبة لكم.
+
+      {sender_name} — Mantiq Technologies
+
+  - code: reply_unsubscribe
+    locale: ar
+    channel: email
+    step: reply_unsubscribe
+    subject: "Re: {original_subject}"
+    body_text: |
+      تم إيقاف المراسلات، ومش هنتواصل معاكم تاني.
+
+      {sender_name} — Mantiq Technologies
+      {company_address} | {company_phone}
+
+  - code: reply_referral_thanks
+    locale: ar
+    channel: email
+    step: reply_referral_thanks
+    subject: "Re: {original_subject}"
+    body_text: |
+      شكرًا لترشيح {referred_name}، هتواصل معاه.
+
+      {sender_name} — Mantiq Technologies
+
+  - code: demo_followup
+    locale: ar
+    channel: whatsapp
+    step: demo_followup
+    subject: ""
+    body_text: |
+      أهلاً {contact_name}، بخصوص {category} — تحبوا نحدد {demo_duration} دقيقة Demo؟ {booking_url}

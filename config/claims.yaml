@@ -1,0 +1,57 @@
+# The ONLY product claims the agent may state. Anything not in this file is forbidden.
+# owner_fill_in values must come from env/DB settings; live mode refuses to start if empty.
+product_name: ProcureAI
+company: Mantiq Technologies
+facts:
+  - id: intake
+    ar: "تستقبل طلب الشراء بالعربي أو الإنجليزي (نص، إكسل، إيميل أو واتساب) وتحوّله لطلب منظّم، وتسأل أسئلة توضيحية لو ناقص تفصيل."
+    en: "Takes a purchase need in Arabic or English (text, Excel, email or WhatsApp) and turns it into a structured request, asking clarifying questions when details are missing."
+  - id: rfq
+    ar: "تجهّز طلب عرض الأسعار (RFQ) وترسله لعدة موردين عبر الإيميل أو واتساب أو نموذج ويب بدون تسجيل دخول."
+    en: "Drafts the RFQ and sends it to several suppliers by email, WhatsApp or a no-login web form."
+  - id: extraction
+    ar: "تقرأ ردود الموردين (نص، PDF، إكسل) وتحوّلها لعروض مقارنة مع مراجعة بشرية لأي حقل غير مؤكد."
+    en: "Reads supplier replies and turns them into comparable offers, with human verification of anything uncertain."
+  - id: comparison
+    ar: "تقارن العروض بالتكلفة الكاملة (الشحن والجمارك وسعر الصرف) وليس بالسعر فقط."
+    en: "Compares offers on total landed cost (freight, duty, FX), not just unit price."
+  - id: negotiation
+    ar: "تقترح ردود تفاوض تحكمها سياسة تحددونها (السعر المستهدف، الحد الأقصى، عدد الجولات)، ولا تكشف أسماء المنافسين أو أسعارهم."
+    en: "Drafts negotiation replies governed by a policy you set (target, walk-away, rounds) and never reveals competitor names or prices."
+  - id: approvals
+    ar: "سلسلة موافقات حسب القيمة والدور؛ أمر الشراء لا يصدر إلا بعد موافقة بشرية."
+    en: "Approval chain by amount and role; a purchase order is issued only after human approval."
+  - id: control
+    ar: "القرار النهائي دائمًا عندكم: المنصة لا توافق ولا توقّع ولا تدفع من تلقاء نفسها."
+    en: "The final decision is always yours: the platform never accepts, signs or pays on its own."
+  - id: analytics
+    ar: "مؤشرات: زمن الدورة، نسبة الاستجابة من الموردين، الإنفاق حسب الفئة والمورد."
+    en: "Metrics: cycle time, supplier response rates, spend by category and supplier."
+  - id: bilingual
+    ar: "واجهة عربية (RTL) وإنجليزية."
+    en: "Arabic (RTL) and English interface."
+  - id: deployment
+    ar: "متاحة سحابيًا أو على خوادمكم (On-Premise)."
+    en: "Available in the cloud or on your own servers."
+  - id: erp
+    ar: "تصدير أوامر الشراء إلى نظام الـ ERP لديكم."
+    en: "Exports purchase orders to your ERP."
+status_note: "Pilot build. Do not claim live AI voice calls. Do not claim live-vendor-tested integrations."
+forbidden:
+  - customer names, logos or testimonials
+  - savings percentages, ROI figures, time-saved numbers
+  - prices, discounts, guarantees, SLAs
+  - certifications or compliance claims
+  - superlatives and comparisons with named competitors
+  - live AI voice calling
+owner_fill_in:
+  poc_offer_text_ar: ""
+  poc_offer_text_en: ""
+  demo_duration_minutes: null
+  features_url: ""
+  booking_url: ""
+  whatsapp_number: ""
+  sender_name: ""
+  sender_title: ""
+  company_address: ""
+  company_phone: ""
